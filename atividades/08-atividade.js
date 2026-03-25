@@ -61,7 +61,7 @@ for (let i = 0; i < matriz2.length; i++) {
   }
 }
 
-console.log("Matriz depois da multiplicação:");
+console.log("Resultado da Multiplicação da Matriz2:");
 for (let i = 0; i < matriz.length; i++) {
   let linha = "";
   for (let i2 = 0; i2 < matriz2[i].length; i2++) {
