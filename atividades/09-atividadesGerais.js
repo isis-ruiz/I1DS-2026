@@ -107,10 +107,10 @@ let minutos = horas * 45;
 let segundos = minutos * 60;
 console.log(horas + "h  " + minutos + "min  " + segundos + "s");
 console.log ("                                 ");
-
+console.log("-------------------------------------------------------");
 /* 
 *******************************************************************
-PARTE 2 – Condicionais (IF) (11 a 20)
+        PARTE 2 – Condicionais (IF) (11 a 20)
 *******************************************************************/
 console.log("PARTE 2 – Condicionais (IF) (11 a 20)");
 console.log ("                                 "); 
@@ -202,8 +202,161 @@ function podeVotar(idade) {
   return frase;
 }
 
-let idades = [23, 25, 12, 57, 17, 72];
+let idades = [23, 95, 12, 57, 17, 72];
 
 for (let i = 0; i < idades.length; i++) {
   console.log("Idade:", idades[i], "-", podeVotar(idades[i]));
 }
+console.log ("                                 "); 
+//16. Verifique se um número está entre 10 e 50.
+let numero = 25
+if (numero >= 10 && numero <= 50) console.log("Está no intervalo");
+
+console.log ("                                 "); 
+
+//17. Crie um sistema de login simples (usuário e senha).
+let user = "admin", pass = "1234";
+if (user === "admin" && pass === "1234") console.log("Acesso permitido, Seja Bem-Vindo");
+else console.log("Acesso negado");
+
+console.log ("                                 "); 
+
+//18. Verifique o maior entre dois números.
+let v1 = 10, v2 = 20;
+console.log("Maior:", v1 > v2 ? v1 : v2);
+
+console.log ("                                 "); 
+
+//19. Verifique o maior entre três números.
+let a1 = 7, a2 = 23, a3 = 16;
+let maior = a1;
+if (a2 > maior) maior = a2;
+if (a3 > maior) maior = a3;
+console.log("O maior entre os três é:", maior);
+
+console.log ("                                 "); 
+
+/* 20. Classifique a idade:
+       Criança
+       Adolescente
+       Adulto
+       Idoso */
+let Idade = 75;
+if (Idade <= 12) console.log("Criança");
+else if (Idade <= 17) console.log("Adolescente");
+else if (Idade <= 59) console.log("Adulto");
+else console.log("Idoso");
+console.log ("                                 "); 
+
+/* 
+*******************************************************************
+           PARTE 3 – Switch Case (21 a 25)
+*******************************************************************/
+console.log ("                                 "); 
+
+//21. Dado um número de 1 a 7, exiba o dia da semana.
+let dia = 4
+switch(dia) {
+    case 1: console.log("Domingo"); break;
+    case 2: console.log("Segunda"); break;
+    case 3: console.log("Terça"); break;
+    case 4: console.log("Quarta"); break;
+    case 5: console.log("Quinta"); break;
+    case 6: console.log("Sexta"); break;
+    case 7: console.log("Sábado"); break;
+    default: console.log("Dia inválido");
+}
+console.log ("                                 "); 
+
+//22. Dado um mês (1 a 12), exiba o nome do mês.
+let menuSelecionado = "2 | Fevereiro";
+switch (menuSelecionado) {
+    case "1 | Janeiro":
+        console.log("Primeiro Trimestre '1 | Janeiro'");
+        break;
+    case "2 | Fevereiro":
+        console.log("Primeiro Trimestre '2 | Fevereiro'");
+        break;
+    case "3 | Março":
+        console.log("Primeiro Trimestre '3 | Março'");
+        break;
+    case "4 | Abril":
+        console.log("Segundo Trimestre '4 | Abril'");
+        break;
+    case "5 | Maio":
+         console.log("Segundo Trimestre '5 | Maio'")    
+        break;
+     case "6 | Junho":
+        console.log("Segundo Trimestre '6 | Junho'");
+        break;
+    case "7 | Julho":
+        console.log("Terceiro Trimestre '7 | Julho'");
+        break;
+    case "8 | Agosto":
+        console.log("Terceiro Trimestre '8 | Agosto'");
+        break;
+    case "9 | Setembro":
+        console.log("Terceiro Trimestre '9 | Setembro'");
+        break;
+    case "10 | Outubro":
+         console.log("Quarto Trimestre '10 | Outubro'")    
+        break;
+    case "11 | Novembro":
+        console.log("Quarto Trimestre '11 | Novembro'");
+        break;
+    case "12 | Dezembro":
+        console.log("Quarto Trimestre '12 | Dezembro'");
+        break;
+        default:
+        console.log("Mês incorreto, selecione uma opção no menu!");
+        break;
+   
+}  
+console.log ("                                 "); 
+
+//23. Dado um mês, informe o trimestre.
+let mes = 6;
+switch(mes) {
+    case 1: case 2: case 3: console.log("1º Trimestre"); break;
+    case 4: case 5: case 6: console.log("2º Trimestre"); break;
+    case 7: case 8: case 9: console.log("3º Trimestre"); break;
+    case 10: case 11: case 12: console.log("4º Trimestre"); break;
+}
+console.log ("                                 "); 
+
+/* 24. Crie um menu simples:
+       1: Somar
+       2: Subtrair
+       3: Multiplicar
+       4: Dividir */
+
+let op = 4;
+switch(op) {
+    case 1: console.log("Operação Soma"); break;
+    case 2: console.log("Operação Subtrair"); break;
+    case 3: console.log("Operação Multiplicar"); break;
+    case 4: console.log("Operação dividir"); break;
+}
+console.log ("                                 "); 
+
+
+/* 25. Sistema de avaliação:
+       A → Excelente
+       B → Bom
+       C → Regular
+       D → Ruim */ 
+ let notA = "A";
+
+switch(notA) {
+    case "A": console.log("Excelente"); break;
+    case "B": console.log("Bom"); break;
+    case "C": console.log("Regular"); break;
+    case "D": console.log("Ruim"); break;
+    default: console.log("Nota inválida"); 
+}
+
+/* 
+*******************************************************************
+           PARTE 4 – Laço FOR (26 a 35) 🚨
+             (TODOS DEVEM USAR for)
+*******************************************************************/
