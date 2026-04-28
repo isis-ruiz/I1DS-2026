@@ -31,6 +31,10 @@ lista.appendChild (novoItem);
 document.getElementById("nome").value = ""; 
 document.getElementById("email").value = ""; 
 }
+const editar = (id) 
+
+
+
 
 const excluir = (id) => {
     const lista = document. getElementById("lista");
