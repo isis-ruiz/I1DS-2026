@@ -1,48 +1,58 @@
-const cadastrar = (event) => { 
+let contador = 0;
 
-//Parar a propagacao padrao do evento *// 
-event.preventDefault(); 
+const cadastrar = (event) => {
+  event.preventDefault();
 
-//Capturar os valores do elementos por Id*// 
-let nome = document.getElementById("nome").value; 
-let email = document.getElementById("email").value; 
+  let nome = document.getElementById("nome").value;
+  let email = document.getElementById("email").value;
 
-//Capturando o elemento de lista por Id*// 
-let id = document.getElementById("lista"); 
+  let lista = document.getElementById("lista");
+  contador++;
 
-//Criar um novo elemento <li>Nome - Email</li> 
-let novoItem = document.createElement("li");
-novoItem.innerHTML = 
-id + 
-" - " +
-nome +
- " - " + 
- email + 
- " - " + 
- "<p onClick=editar(" + 
-id + 
-") class= 'btn'>Editar</p>" + 
-"<p onClick=excluir(" + 
-id + 
-") class= 'btn'>Excluir</p>";
-//Adicionar o novo item na lista ja existente 
-lista.appendChild (novoItem); 
-//Limpar os campos 
-document.getElementById("nome").value = ""; 
-document.getElementById("email").value = ""; 
-}
-const editar = (id) 
+  let novoItem = document.createElement("li");
+  novoItem.setAttribute("data-id", contador);
 
+  novoItem.innerHTML =
+    contador + " - " +
+    nome + " - " +
+    email +
+    ` <button onclick="editar(${contador})">Editar</button>
+      <button onclick="excluir(${contador})">Excluir</button>`;
 
+  lista.appendChild(novoItem);
 
+  document.getElementById("nome").value = "";
+  document.getElementById("email").value = "";
+};
 
 const excluir = (id) => {
-    const lista = document. getElementById("lista");
-    const itens = document.querySelectorAll("li"); 
+  const itens = document.querySelectorAll("li");
 
-    itens.forEach((item) => {
-     if(item.innerHTML.includes(id)) {
-        item.remove(); 
-     }
-    }); 
-}; 
+  itens.forEach((item) => {
+    if (item.getAttribute("data-id") == id) {
+      item.remove();
+    }
+  });
+};
+
+const editar = (id) => {
+  const itens = document.querySelectorAll("li");
+
+  itens.forEach((item) => {
+    if (item.getAttribute("data-id") == id) {
+      let texto = item.innerText.split(" - ");
+
+      let novoNome = prompt("Novo nome:", texto[1]);
+      let novoEmail = prompt("Novo email:", texto[2]);
+
+      if (novoNome && novoEmail) {
+        item.innerHTML =
+          id + " - " +
+          novoNome + " - " +
+          novoEmail +
+          ` <button onclick="editar(${id})">Editar</button>
+            <button onclick="excluir(${id})">Excluir</button>`;
+      }
+    }
+  });
+};
